@@ -26,8 +26,11 @@
         {% for event in events %}
         <li>
             <p> {{event.name}}, {{event.date}}, {{event.number_of_guests}}, {{event.location}}, {{event.description}} </p>
-        </li>
+            {% if event.recurring %}
+            <span>&#9989;</span>
+            {% endif %}
         {% endfor %}
+        </li>
     </ul>
 </body>
 </html>
