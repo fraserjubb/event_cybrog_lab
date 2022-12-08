@@ -8,5 +8,26 @@
 </head>
 <body>
     <h1>Events List</h1>
+    <form action="/events" method="post">
+        <label for="date">date</label>
+        <input type="date" name="date" id="date">
+        <label for="name">name</label>
+        <input type="text" name="name" id="name">
+        <label for="number_of_guests">number_of_guests</label>
+        <input type=“text” name="number_of_guests" id="number_of_guests">
+        <label for="location">location</label>
+        <input type=“text” name="location" id="location">
+        <label for="description">description</label>
+        <input type=“text” name="description" id="description">
+        <input type="submit" value="Add Event">
+    </form>
+
+    <ul>
+        {% for event in events %}
+        <li>
+            <p> {{event.name}}, {{event.date}}, {{event.number_of_guests}}, {{event.location}}, {{event.description}} </p>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
